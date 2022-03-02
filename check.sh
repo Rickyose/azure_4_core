@@ -7,8 +7,6 @@ if [ ! -f sudah_initiate_raptoreum.txt ]; then
   cd cpuminer-gr-avx2
   ./build.sh
   wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/tune_config
-else
-  sleep 5
 fi
 
 sleep 60
