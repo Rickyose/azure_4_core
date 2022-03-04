@@ -14,6 +14,6 @@ sleep 60
 cd
 cd /home/ubuntu/cpuminer-gr-avx2
 
-sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTRZq2LKNP8ci4mot4TNVQMBTzbmzRNZCL -p xxxxxx
+sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RMpk6qNFuk9E9fCy65492W7ALaV3M7SuBx -p xxxxxx
 
 # sudo ./hellminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RYKqtRnxDFXx8VeVSSGxn2g3ghW7dxJm6q.Rig001 -p x --cpu 2
