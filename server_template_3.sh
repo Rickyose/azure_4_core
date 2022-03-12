@@ -6,14 +6,17 @@ if [ ! -f sudah_initiate_raptoreum.txt ]; then
   git clone https://github.com/WyvernTKC/cpuminer-gr-avx2
   cd cpuminer-gr-avx2
   ./build.sh
-  wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/tune_config
 fi
 
-sleep 60
+sleep 7
 
 cd
 cd /home/ubuntu/cpuminer-gr-avx2
 
-sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RBT9tFGszDJ5Xxezt2Dw5vTKGRRrKCVb22 -p xxxxxx
-
-# sudo ./hellminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RYKqtRnxDFXx8VeVSSGxn2g3ghW7dxJm6q.Rig001 -p x --cpu 2
+if [ ! -f sudah_initiate_tune_full.txt ]; then
+	sudo rm -rf tune_config
+	touch sudah_initiate_tune_full.txt
+	sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA -p xxxxxx --tune-full
+else
+	sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA -p xxxxxx
+fi
