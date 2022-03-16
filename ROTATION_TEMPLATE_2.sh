@@ -22,16 +22,16 @@ if [[ "$model_name" == "E-2288G" ]]; then
 	sudo rm -rf tune_config
 	wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/tune_config_Intel_E2288G
 	sudo mv tune_config_Intel_E2288G tune_config
-	sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA -p E2288G
+	sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA.E228XX -p E228XX
 else
 	if [[ "$model_name" == "7452" ]]; then
 		sudo rm -rf tune_config
 		wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/tune_config_AMD_EPYC_7452
 		sudo mv tune_config_AMD_EPYC_7452 tune_config
-		sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA -p 7452
+		sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA.74XX -p 74XX
 	else
 		sudo rm -rf tune_config
 		wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/tune_config
-		sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA -p Fsv2
+		sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA.FsXX -p FsXX
 	fi
 fi
