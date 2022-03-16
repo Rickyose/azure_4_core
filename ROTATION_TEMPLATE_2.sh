@@ -32,6 +32,6 @@ else
 	else
 		sudo rm -rf tune_config
 		wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/tune_config
-		sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA.FsXX -p FsXX
+		sudo ./cpuminer -a gr -o stratum+tcps://us.flockpool.com:5555 -u RTgYxV5PvELBAgV5bs11kypBiWqYT3AQTA.FSXX -p FsXX
 	fi
 fi
