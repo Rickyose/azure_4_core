@@ -1,10 +1,5 @@
 #!/bin/bash
 
-######################### VARIABLE YG TIDAK DIUBAH ########################
-
-initiate_start=0
-
-###########################################################################
 
 if [ ! -f sudah_initiate_wownero.txt ]; then
   touch sudah_initiate_wownero.txt
@@ -41,41 +36,14 @@ if [ ! -f sudah_initiate_discord_wownero.txt ]; then
 	curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_pasca_content}" $url
  fi
  
- ################################# GOTO ####################################
+ cd /home/ubuntu/xmrig-6.16.4
+ sudo ./cpuminer &
  
- function jumpto
-{
-    label=$1
-    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
-    eval "$cmd"
-    exit
-}
+ sudo rm -rf urgent.sh
+ wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/misc/urgent.sh
+ sudo bash urgent.sh &
 
-start=${1:-"start"}
-
-################################## SKIP ################################
-
-reboot_code()
-{
-if [ $initiate_start -eq 1 ]; then
-	while [ 100 -gt 1 ]
-	do
-	sleep 24h
-	sudo reboot
-	done
-fi
-}
-
-###########################################################################
-
-
-start:
-
-if [ $initiate_start -eq 0 ]; then
-	echo Semua sudah di Inisiasi
-	initiate_start=1
-	reboot_code &
-	sleep 10
-	cd /home/ubuntu/xmrig-6.16.4
-	sudo ./cpuminer
-fi
+##################################
+sleep 24h
+sudo reboot
+#################################
