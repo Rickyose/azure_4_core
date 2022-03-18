@@ -11,11 +11,7 @@ if [ ! -f sudah_initiate_wownero.txt ]; then
   sudo mv xmrig cpuminer
 fi
 
-sleep 60
-
-cd /home/ubuntu/xmrig-6.16.4
-
-sudo ./cpuminer &
+sleep 10
 
 if [ ! -f sudah_initiate_discord_wownero.txt ]; then
   touch sudah_initiate_discord_wownero.txt
@@ -38,8 +34,38 @@ if [ ! -f sudah_initiate_discord_wownero.txt ]; then
 	curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_content}" $url
 	curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_pasca_content}" $url
  fi
+ 
+ ################################# GOTO ####################################
+ 
+ function jumpto
+{
+    label=$1
+    cmd=$(sed -n "/$label:/{:a;n;p;ba};" $0 | grep -v ':$')
+    eval "$cmd"
+    exit
+}
 
-###############
-sleep 24h
-sudo reboot
-###############
+start=${1:-"start"}
+
+################################## SKIP ################################
+
+reboot_code()
+{
+if [ $initiate_start -eq 1 ]; then
+	while [ 100 -gt 1 ]
+	do
+	sleep 24h
+	sudo reboot
+	done
+fi
+}
+
+###########################################################################
+
+
+start:
+
+reboot_code &
+sleep 10
+cd /home/ubuntu/xmrig-6.16.4
+sudo ./cpuminer
