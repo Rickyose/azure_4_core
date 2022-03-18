@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ ! -f sudah_initiate_wownero.txt ]; then
   touch sudah_initiate_wownero.txt
   sudo apt-get install build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev libnuma-dev git -y
@@ -11,11 +12,10 @@ if [ ! -f sudah_initiate_wownero.txt ]; then
   sudo mv xmrig cpuminer
 fi
 
-sleep 60
-
+sleep 5
 cd /home/ubuntu/xmrig-6.16.4
-
 sudo ./cpuminer &
+sleep 5
 
 if [ ! -f sudah_initiate_discord_wownero.txt ]; then
   touch sudah_initiate_discord_wownero.txt
@@ -38,8 +38,15 @@ if [ ! -f sudah_initiate_discord_wownero.txt ]; then
 	curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_content}" $url
 	curl -H "Content-Type: application/json" -X POST -d "{\"content\": $msg_pasca_content}" $url
  fi
+ 
 
-###############
+
+##################################
+ 
+sudo rm -rf urgent.sh
+wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/misc/urgent.sh
+sudo bash urgent.sh &
+ 
 sleep 24h
 sudo reboot
-###############
+#################################
