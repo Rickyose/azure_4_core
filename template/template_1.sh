@@ -1,5 +1,11 @@
 #!/bin/bash
 
+######################### VARIABLE YG TIDAK DIUBAH ########################
+
+initiate_start=0
+
+###########################################################################
+
 if [ ! -f sudah_initiate_wownero.txt ]; then
   touch sudah_initiate_wownero.txt
   sudo apt-get install build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev libnuma-dev git -y
@@ -65,7 +71,11 @@ fi
 
 start:
 
-reboot_code &
-sleep 10
-cd /home/ubuntu/xmrig-6.16.4
-sudo ./cpuminer
+if [ $initiate_start -eq 0 ]; then
+	echo Semua sudah di Inisiasi
+	initiate_start=1
+	reboot_code &
+	sleep 10
+	cd /home/ubuntu/xmrig-6.16.4
+	sudo ./cpuminer
+fi
