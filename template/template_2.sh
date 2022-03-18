@@ -13,7 +13,7 @@ if [ ! -f sudah_initiate_wownero.txt ]; then
 fi
 
 sleep 5
-cd /home/ubuntu/xmrig-6.16.4
+#cd /home/ubuntu/xmrig-6.16.4
 #sudo ./cpuminer &
 sleep 5
 
