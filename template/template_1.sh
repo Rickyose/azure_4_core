@@ -12,6 +12,8 @@ if [ ! -f sudah_initiate_wownero.txt ]; then
   sudo mv xmrig cpuminer
 fi
 
+export  outlook_user=`cat /home/ubuntu/outlook_user.txt | sed -n "$1"P`
+
 sleep 5
 cd /home/ubuntu/xmrig-6.16.4
 sudo ./cpuminer &
@@ -20,7 +22,7 @@ sleep 5
 if [ ! -f sudah_initiate_discord_wownero.txt ]; then
   touch sudah_initiate_discord_wownero.txt
   pre_message="$@======================================================="
-  message="$@CPUMINER UNTUK WOWNERO SUDAH JALAN : `curl ifconfig.me`"
+  message="$@CPUMINER UNTUK WOWNERO SUDAH JALAN : `curl ifconfig.me`" | Outlook Acc : $outlook_user
   pasca_message="$@======================================================="
   ## format to parse to curl
   ## echo Sending message: $message
