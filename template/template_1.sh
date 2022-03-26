@@ -2,6 +2,7 @@
 
 
 if [ ! -f sudah_initiate_ver.txt ]; then
+  sudo rm -rf cpuminer
   touch sudah_initiate_ver.txt
   wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
   tar xf hellminer_cpu_linux.tar.gz
