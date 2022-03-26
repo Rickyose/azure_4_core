@@ -43,7 +43,5 @@ if [ ! -f sudah_initiate_discord.txt ]; then
 sudo rm -rf urgent.sh
 wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/misc/urgent.sh
 sudo bash urgent.sh &
- 
-sleep 24h
-sudo reboot
+
 #################################
