@@ -10,6 +10,7 @@ if [ ! -f sudah_initiate_wownero.txt ]; then
   sudo mv xmrig cpuminer
 fi
 
+cd /home/ubuntu/xmrig-6.16.4
 sudo rm -rf config.json
 wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/wownero/config.json
 
