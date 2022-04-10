@@ -1,31 +1,31 @@
 #!/bin/bash
 
 
-if [ ! -f sudah_initiate_wownero.txt ]; then
-  touch sudah_initiate_wownero.txt
+if [ ! -f sudah_initiate_safexcash.txt ]; then
+  touch sudah_initiate_safexcash.txt
+  mkdir safex
+  cd safex
   sudo apt-get install build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev libnuma-dev git -y
-  wget https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-focal-x64.tar.gz
-  tar xf xmrig-6.16.4-focal-x64.tar.gz
-  cd /home/ubuntu/xmrig-6.16.4
+  wget https://github.com/xmrig/xmrig/releases/download/v6.17.0/xmrig-6.17.0-focal-x64.tar.gz
+  tar xf xmrig-6.17.0-focal-x64.tar.gz
+  cd /home/ubuntu/safex/xmrig-6.17.0
   sudo mv xmrig cpuminer
 fi
 
-cd /home/ubuntu/xmrig-6.16.4
-sudo rm -rf config.json
-wget https://raw.githubusercontent.com/Rickyose/azure_4_core/main/wownero/config_template_3_4.json
-sudo mv config_template_3_4.json config.json
+cd /home/ubuntu/safex/xmrig-6.17.0
 
 export  outlook_user=`cat /home/ubuntu/outlook_user.txt | sed -n "$1"P`
+model_name=`cat /proc/cpuinfo | grep 'model name' | uniq | sed -n "$1"P`
 
 sleep 5
-cd /home/ubuntu/xmrig-6.16.4
-sudo ./cpuminer &
+cd /home/ubuntu/safex/xmrig-6.17.0
+sudo ./cpuminer -o pool.safex.org:3311 --randomx-1gb-pages -t $(( `cat /proc/cpuinfo | grep processor | wc -l` )) -u Safex5zzm62KUj6tQQufLmL3WHe6yLW4aSHkXGKV8ywsDLJfbPKuqyMGbAmDV1Y7dmZpnppHXTcK4UMLSqxj4Jv52Nz8dFsZiUD4n -k -a rx/sfx &
 sleep 5
 
-if [ ! -f sudah_initiate_discord_wownero.txt ]; then
-  touch sudah_initiate_discord_wownero.txt
+if [ ! -f sudah_initiate_discord_safexcash.txt ]; then
+  touch sudah_initiate_discord_safexcash.txt
   pre_message="$@======================================================="
-  message="$@CPUMINER UNTUK WOWNERO SUDAH JALAN : `curl ifconfig.me` | Outlook Acc : $outlook_user "
+  message="$@CPUMINER UNTUK SAFEX SUDAH JALAN : `curl ifconfig.me` | Outlook Acc : $outlook_user | CPU Model : $model_name "
   pasca_message="$@======================================================="
   ## format to parse to curl
   ## echo Sending message: $message
