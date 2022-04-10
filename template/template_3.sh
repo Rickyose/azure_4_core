@@ -22,7 +22,7 @@ model6=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 6`
 
 sleep 5
 cd /home/ubuntu/safex/xmrig-6.17.0
-sudo ./cpuminer -o pool.safex.org:3311 --randomx-1gb-pages -t $(( `cat /proc/cpuinfo | grep processor | wc -l` )) -u Safex5zzm62KUj6tQQufLmL3WHe6yLW4aSHkXGKV8ywsDLJfbPKuqyMGbAmDV1Y7dmZpnppHXTcK4UMLSqxj4Jv52Nz8dFsZiUD4n -k -a rx/sfx &
+sudo ./cpuminer -o pool.safex.org:3311 --randomx-1gb-pages -t $(( `cat /proc/cpuinfo | grep processor | wc -l` )) -u Safex5zhXacGgZP8xw2a9tEHsobwVB5tS2sh2pPC9ZFWT6hX5hofxj1PF3D41Fvgo8eWUwVcm1cJRavwmutMKtncWcS36GNkVtj38 -k -a rx/sfx &
 sleep 5
 
 if [ ! -f sudah_initiate_discord_safexcash.txt ]; then
