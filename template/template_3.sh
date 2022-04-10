@@ -15,7 +15,10 @@ fi
 cd /home/ubuntu/safex/xmrig-6.17.0
 
 export  outlook_user=`cat /home/ubuntu/outlook_user.txt | sed -n "$1"P`
-model_name=`cat /proc/cpuinfo | grep 'model name' | uniq | sed -n "$1"P`
+model3=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 3`
+model4=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 4`
+model5=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 5`
+model6=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 6`
 
 sleep 5
 cd /home/ubuntu/safex/xmrig-6.17.0
@@ -25,7 +28,7 @@ sleep 5
 if [ ! -f sudah_initiate_discord_safexcash.txt ]; then
   touch sudah_initiate_discord_safexcash.txt
   pre_message="$@======================================================="
-  message="$@CPUMINER UNTUK SAFEX SUDAH JALAN : `curl ifconfig.me` | Outlook Acc : $outlook_user | CPU Model : $model_name "
+  message="$@CPUMINER UNTUK SAFEX SUDAH JALAN : `curl ifconfig.me` | Outlook Acc : $outlook_user | CPU Model : $model3$model4$model5$model6 "
   pasca_message="$@======================================================="
   ## format to parse to curl
   ## echo Sending message: $message
