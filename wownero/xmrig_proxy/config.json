@@ -18,12 +18,12 @@
         {
             "host": "0.0.0.0",
             "port": 8118,
-            "tls": false
+            "tls": true #diganti dari false
         },
         {
             "host": "::",
             "port": 8118,
-            "tls": false
+            "tls": true #diganti dari false
         }
     ],
     "colors": true,
@@ -41,9 +41,9 @@
             "user": "Wo4h3NTk33Jhwxfri6F7Mm9UN44AbNZjacktQ1wdz9mY4Epr4mmELroXndn1vDUpzhMjdbhaDNS9M7Er8i1WqShB1GMNtXEyg",
             "spend-secret-key": "beea7bcc6969229e2665bcf1cf9a103d24358a5f8c1c15d6a95fdb297c79b604",
             "rig-id": null,
-            "keepalive": false,
+            "keepalive": true, #diganti dari false
             "enabled": true,
-            "tls": false,
+            "tls": true, #diganti dari false
             "tls-fingerprint": null,
             "daemon": true
         }
