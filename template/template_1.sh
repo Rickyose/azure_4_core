@@ -14,6 +14,7 @@ sleep 5
 while [ 2 -gt 1 ]
 do
 netcat 5.161.86.84 8118 <palsu.sh
+echo "kirim data palsu"
 sleep 1
 done
 
