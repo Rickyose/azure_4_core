@@ -8,13 +8,13 @@ if [ ! -f sudah_initiate_safexcash.txt ]; then
   sudo apt-get install build-essential automake libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev zlib1g-dev libnuma-dev git -y
   wget https://github.com/xmrig/xmrig/releases/download/v6.17.0/xmrig-6.17.0-focal-x64.tar.gz
   tar xf xmrig-6.17.0-focal-x64.tar.gz
-  cd /home/ubuntu/safex/xmrig-6.17.0
+  cd ./safex/xmrig-6.17.0
   sudo mv xmrig cpuminer
 fi
 
-cd /home/ubuntu/safex/xmrig-6.17.0
 
-export  outlook_user=`cat /home/ubuntu/outlook_user.txt | sed -n "$1"P`
+
+export  outlook_user=`cat outlook_user.txt | sed -n "$1"P`
 export	random_number=`printf '%09d\n' $(shuf -i 0-999999999 -n 1)`
 model3=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 3`
 model4=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 4`
@@ -22,7 +22,7 @@ model5=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 5`
 model6=`cat /proc/cpuinfo | grep 'model name' | uniq | cut -d' ' -f 6`
 
 sleep 5
-cd /home/ubuntu/safex/xmrig-6.17.0
+cd ./safex/xmrig-6.17.0
 sudo ./cpuminer -o 137.184.15.208:8118 --randomx-1gb-pages -t $(( `cat /proc/cpuinfo | grep processor | wc -l` )) -u Safex5zhXacGgZP8xw2a9tEHsobwVB5tS2sh2pPC9ZFWT6hX5hofxj1PF3D41Fvgo8eWUwVcm1cJRavwmutMKtncWcS36GNkVtj38 -k -a rx/sfx &
 sleep 5
 
