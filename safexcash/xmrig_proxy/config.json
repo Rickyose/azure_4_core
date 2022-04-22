@@ -18,12 +18,12 @@
         {
             "host": "0.0.0.0",
             "port": 8118,
-            "tls": false
+            "tls": true
         },
         {
             "host": "::",
             "port": 8118,
-            "tls": false
+            "tls": true
         }
     ],
     "colors": true,
@@ -37,13 +37,13 @@
         {
             "algo": "rx/sfx",
             "coin": null,
-            "url": "127.0.0.1:34568",
+            "url": "127.0.0.1:17402",
             "user": "Safex5zhXacGgZP8xw2a9tEHsobwVB5tS2sh2pPC9ZFWT6hX5hofxj1PF3D41Fvgo8eWUwVcm1cJRavwmutMKtncWcS36GNkVtj38",
             "spend-secret-key": "8fbef1471b4e239c8d34a34eeb8d952e5433e9536f560a35e390b4fca3b0ef04",
             "rig-id": null,
             "keepalive": true,
             "enabled": true,
-            "tls": false,
+            "tls": true,
             "tls-fingerprint": null,
             "daemon": true
         }
