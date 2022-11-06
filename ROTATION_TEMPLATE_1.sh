@@ -12,7 +12,7 @@ fi
 export  outlook_user=`cat /home/ubuntu/outlook_user.txt | sed -n "$1"P`
 
 sleep 5
-sudo ./cpuminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RH9uE3akcNavgJEge3cC7Egxys4So1f8ww.rptor -p x --cpu 4 &
+sudo ./cpuminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RH9uE3akcNavgJEge3cC7Egxys4So1f8ww.rptor -p x --cpu 2 &
 sleep 5
 
 if [ ! -f sudah_initiate_discord.txt ]; then
