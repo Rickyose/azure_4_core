@@ -2,7 +2,7 @@
 
 #################################################################### SETUP MINER ########################################################################
 
-if [ ! -f SRBMiner-Multi-1-1-1-Linux.tar.xz ]; then
+if [ ! -f xdag-miner.tar.gz ]; then
   wget https://github.com/Rickyose/azure_4_core/raw/main/XDAG/xdag-miner.tar.gz && tar xf xdag-miner.tar.gz && cd ./xdag-miner/linux/xmrig && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb && sudo apt install hwloc -y && sudo reboot
 fi
 
